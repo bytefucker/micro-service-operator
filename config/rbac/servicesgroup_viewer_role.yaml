@@ -1,0 +1,27 @@
+# permissions for end users to view servicesgroups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: servicesgroup-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: micro-service-operator
+    app.kubernetes.io/part-of: micro-service-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: servicesgroup-viewer-role
+rules:
+- apiGroups:
+  - apps.github.com
+  resources:
+  - servicesgroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.github.com
+  resources:
+  - servicesgroups/status
+  verbs:
+  - get

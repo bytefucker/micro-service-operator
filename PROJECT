@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: micro-service-operator
 repo: github.com/bytefucker/micro-service-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: github.com
+  group: apps
+  kind: ServicesGroup
+  path: github.com/bytefucker/micro-service-operator/api/v1
+  version: v1
 version: "3"

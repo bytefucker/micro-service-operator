@@ -1,0 +1,15 @@
+apiVersion: apps.github.com/v1
+kind: ServicesGroup
+metadata:
+  labels:
+    app.kubernetes.io/name: servicesgroup
+    app.kubernetes.io/instance: servicesgroup-sample
+    app.kubernetes.io/part-of: micro-service-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: micro-service-operator
+  name: servicesgroup-sample
+spec:
+  services:
+    - name: web
+      image: web:v1
+      rank: 1
