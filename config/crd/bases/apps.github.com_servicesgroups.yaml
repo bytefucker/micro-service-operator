@@ -40,11 +40,17 @@ spec:
                   to remove/update
                 items:
                   properties:
+                    containerPort:
+                      format: int32
+                      type: integer
                     image:
                       type: string
                     name:
                       type: string
                     rank:
+                      type: integer
+                    replicas:
+                      format: int32
                       type: integer
                   type: object
                 type: array

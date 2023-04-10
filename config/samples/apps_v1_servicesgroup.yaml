@@ -10,6 +10,8 @@ metadata:
   name: servicesgroup-sample
 spec:
   services:
-    - name: web
-      image: web:v1
+    - name: app-web
+      image: nginx:alpine
+      containerPort: 80
       rank: 1
+      replicas: 1

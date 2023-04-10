@@ -33,9 +33,11 @@ type ServicesGroupSpec struct {
 }
 
 type Service struct {
-	Name  string `json:"name,omitempty"`  //服务名称
-	Image string `json:"image,omitempty"` //服务镜像
-	Rank  int    `json:"rank,omitempty"`  //启动顺序
+	Name          string `json:"name,omitempty"`  //服务名称
+	Image         string `json:"image,omitempty"` //服务镜像
+	ContainerPort int32  `json:"containerPort,omitempty"`
+	Rank          int    `json:"rank,omitempty"`      //启动顺序
+	Replicas      *int32 `json:"replicas,omitempty" ` //分片数量
 }
 
 // ServicesGroupStatus defines the observed state of ServicesGroup
